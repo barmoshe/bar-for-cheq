@@ -3,7 +3,7 @@ import { mailtoHref, whatsappHref, cvHref, githubHref } from "@/lib/contact";
 const LINKS = [
   { label: "WhatsApp", href: whatsappHref, primary: true },
   { label: "Email", href: mailtoHref, primary: false },
-  { label: "Download CV", href: cvHref, primary: false },
+  { label: "Download CV", href: cvHref, primary: false, download: true },
   { label: "GitHub", href: githubHref, primary: false },
 ];
 
@@ -31,7 +31,8 @@ export default function Close() {
               key={l.label}
               href={l.href}
               target={l.href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={l.href.startsWith("mailto:") ? undefined : "noreferrer"}
+              rel={l.href.startsWith("mailto:") ? undefined : "noopener"}
+              download={l.download ? "" : undefined}
               className={
                 l.primary
                   ? "rounded-full btn-gradient px-7 py-3.5 text-[15px] font-bold text-white transition hover:opacity-95"

@@ -20,4 +20,4 @@ export const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURICo
 
 export const githubHref = "https://github.com/barmoshe";
 export const linkedinHref = "https://www.linkedin.com/in/barmoshe/";
-export const cvHref = "/cv/Bar_Moshe_CV.pdf";
+export const cvHref = "/Bar_Moshe_Resume.pdf";
