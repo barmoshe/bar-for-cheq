@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   CHEQ design system, rebuilt from cheq.ai.
+   Dark navy-purple canvas, a signature purple -> hot-pink gradient, Outfit type,
+   pill buttons and neon/data-viz energy.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Brand */
+  --color-ink: #15172c; /* page background */
+  --color-ink-2: #1c1834; /* raised surface */
+  --color-ink-3: #261a48; /* deeper purple surface */
+  --color-pink: #fd0173; /* primary accent */
+  --color-pink-hot: #fe0072;
+  --color-purple: #9925cf; /* gradient start */
+  --color-violet: #6633fe;
+  --color-cyan: #72daff;
+  --color-coral: #ea5938;
+
+  /* Verdict colors for the console */
+  --color-human: #2ee6a8;
+  --color-bot: #f6c945;
+  --color-agent: #b06cff;
+  --color-bad: #ff3d6e;
+
+  /* Light surfaces (used sparingly, CHEQ's light sections) */
+  --color-mist: #eef1fa;
+
+  /* Text on dark */
+  --color-fg: #ffffff;
+  --color-fg-dim: #b1b9d1;
+  --color-fg-mute: #8a8fa8;
+
+  /* Soft borders + elevation */
+  --color-line: rgba(255, 255, 255, 0.1);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 40px rgba(253, 1, 115, 0.25);
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --header-h: 64px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px);
+  background: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-ink);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* The signature purple -> hot-pink gradient as clipped text. */
+@utility gradient-text {
+  background-image: linear-gradient(90deg, var(--color-purple), var(--color-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Cyan-leaning variant for secondary heads. */
+@utility gradient-text-cool {
+  background-image: linear-gradient(90deg, var(--color-violet), var(--color-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient pill button surface. */
+@utility btn-gradient {
+  background-image: linear-gradient(90deg, var(--color-purple), var(--color-pink));
+  box-shadow: 0 6px 24px rgba(253, 1, 115, 0.3);
+}
+
+/* Subtle glass card on the dark canvas. */
+@utility glass {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--color-line);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Live pulse + row reveal. */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-rise {
+  animation: rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-blink,
+  .animate-rise {
+    animation: none;
+  }
 }
