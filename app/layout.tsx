@@ -10,7 +10,7 @@ const outfit = Outfit({
 
 const title = "Bar Moshe, for CHEQ";
 const description =
-  "An AI Engineer application to CHEQ, with a live traffic-intelligence console that tells humans, bots and AI agents apart. By Bar Moshe.";
+  "An AI Engineer application to CHEQ, in their own brand. I build AI products, idea to production. By Bar Moshe.";
 
 export const metadata: Metadata = {
   title,

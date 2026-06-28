@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Bar Moshe, for CHEQ: an AI Engineer application, with a live traffic-intelligence console.";
+export const alt = "Bar Moshe, for CHEQ: an AI Engineer application, in their own brand.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -102,12 +102,16 @@ export default async function OgImage() {
             AI Engineer · application for CHEQ
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", marginTop: 34, lineHeight: 1.0 }}>
-            <span style={{ fontSize: 92, fontWeight: 800, letterSpacing: "-0.03em", color: "#fff" }}>Agents.</span>
-            <span style={{ fontSize: 92, fontWeight: 800, letterSpacing: "-0.03em", color: "#fff" }}>Humans.</span>
+          <div style={{ display: "flex", flexDirection: "column", marginTop: 34, lineHeight: 1.08 }}>
+            <span style={{ fontSize: 62, fontWeight: 800, letterSpacing: "-0.03em", color: "#fff" }}>
+              I want to build
+            </span>
+            <span style={{ fontSize: 62, fontWeight: 800, letterSpacing: "-0.03em", color: "#fff" }}>
+              CHEQ&apos;s next
+            </span>
             <span
               style={{
-                fontSize: 92,
+                fontSize: 62,
                 fontWeight: 800,
                 letterSpacing: "-0.03em",
                 backgroundImage: `linear-gradient(90deg, ${PURPLE}, ${PINK})`,
@@ -115,12 +119,12 @@ export default async function OgImage() {
                 color: "transparent",
               }}
             >
-              Bots.
+              AI product.
             </span>
           </div>
 
-          <span style={{ fontSize: 25, fontWeight: 500, color: FG_DIM, marginTop: 28, maxWidth: 520 }}>
-            I built CHEQ a live console that tells them apart.
+          <span style={{ fontSize: 24, fontWeight: 500, color: FG_DIM, marginTop: 26, maxWidth: 520 }}>
+            I build AI products, idea to production.
           </span>
 
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: "auto" }}>

@@ -1,23 +1,25 @@
-import Header from "@/components/Header";
+import Nav from "@/components/Nav";
+import ScrollReveal from "@/components/ScrollReveal";
 import Hero from "@/components/Hero";
-import DemoSection from "@/components/DemoSection";
-import ProofCards from "@/components/ProofCards";
-import HowIBuild from "@/components/HowIBuild";
-import Contact from "@/components/Contact";
+import About from "@/components/About";
+import WhyFit from "@/components/WhyFit";
+import Work from "@/components/Work";
+import Close from "@/components/Close";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Header />
+      <Nav />
+      <Hero />
       <main id="main" tabIndex={-1} className="flex-1 outline-none">
-        <Hero />
-        <DemoSection />
-        <ProofCards />
-        <HowIBuild />
-        <Contact />
+        <About />
+        <WhyFit />
+        <Work />
+        <Close />
       </main>
       <Footer />
+      <ScrollReveal />
     </>
   );
 }
