@@ -16,8 +16,9 @@ export default function About() {
             I build AI products, <span className="gradient-text italic">end to end</span>, fast.
           </h2>
           <p className="reveal mt-5 max-w-xl leading-relaxed text-fg-dim">
-            I run my own agent-operated workshop on Claude Code, which gives one
-            builder the throughput of a small team. I take a business need and turn
+            I build with AI agents on Claude Code every day. It lets one builder
+            move like a small team: a short brief becomes working software in days.
+            I take a business need and turn
             it into a deployed product, the data plumbing, the LLM and agent work,
             and the last 10% of polish. I track the frontier and verify against live
             docs, not stale memory. I&apos;d rather hand you a running thing than a deck.
