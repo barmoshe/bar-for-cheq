@@ -39,6 +39,8 @@
 
   --font-sans: var(--font-outfit), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;
+  --font-display: var(--font-jakarta), var(--font-outfit), ui-sans-serif,
+    system-ui, sans-serif;
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
 }
 
@@ -148,11 +150,110 @@ body {
   transform: none;
 }
 
+/* Per-word hero headline stagger, the CHEQ "Agents. Humans. Bots." reveal. */
+@keyframes wordIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.word {
+  display: inline-block;
+  opacity: 0;
+  animation: wordIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 120ms + 100ms);
+}
+
+/* Hero node-graph: cards scale in from the engine, connectors flow, core pulses. */
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.g-card {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--i, 0) * 140ms + 350ms);
+}
+@keyframes flow {
+  to {
+    stroke-dashoffset: -200;
+  }
+}
+.g-flow {
+  stroke-dasharray: 2 7;
+  animation: flow 3s linear infinite;
+}
+@keyframes ring {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.1);
+    opacity: 0;
+  }
+}
+.g-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring 3s ease-out infinite;
+}
+@keyframes dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+.g-dot {
+  animation: dot 2.4s ease-in-out infinite;
+}
+
+/* Auto-scrolling marquee, the CHEQ "trusted by" carousel analog. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor-blink,
   .animate-rise,
-  .float {
+  .float,
+  .word,
+  .g-card,
+  .g-flow,
+  .g-ring,
+  .g-dot,
+  .marquee-track {
     animation: none;
+  }
+  .word,
+  .g-card {
+    opacity: 1;
+  }
+  .g-flow {
+    stroke-dasharray: none;
   }
   .reveal {
     opacity: 1;

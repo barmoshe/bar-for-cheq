@@ -12,8 +12,8 @@ export default function About() {
       <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p className="reveal text-sm font-bold uppercase tracking-[0.1em] text-pink">About</p>
-          <h2 className="reveal mt-3 text-[clamp(1.8rem,1.2rem+2.4vw,2.8rem)] font-black leading-[1.1] tracking-[-1px] text-white">
-            I build AI products, end to end, fast.
+          <h2 className="reveal mt-3 font-display text-[clamp(1.8rem,1.2rem+2.4vw,2.8rem)] font-extrabold leading-[1.1] tracking-[-1px] text-white">
+            I build AI products, <span className="gradient-text italic">end to end</span>, fast.
           </h2>
           <p className="reveal mt-5 max-w-xl leading-relaxed text-fg-dim">
             I run my own agent-operated workshop on Claude Code, which gives one

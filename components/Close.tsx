@@ -17,8 +17,8 @@ export default function Close() {
 
       <div className="relative mx-auto max-w-2xl text-center">
         <p className="reveal text-sm font-bold uppercase tracking-[0.1em] text-pink">The ask</p>
-        <h2 className="reveal mt-3 text-[clamp(2rem,1.4rem+2.6vw,3rem)] font-black leading-[1.08] tracking-[-1px] text-white">
-          I&apos;d love to build here. Let&apos;s talk.
+        <h2 className="reveal mt-3 font-display text-[clamp(2rem,1.4rem+2.6vw,3rem)] font-extrabold leading-[1.08] tracking-[-1px] text-white">
+          I&apos;d love to build here. <span className="gradient-text italic">Let&apos;s talk.</span>
         </h2>
         <p className="reveal mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-fg-dim">
           Tel Aviv is home, so hybrid works well. If there&apos;s a place for a

@@ -20,8 +20,8 @@ export default function Work() {
         <p className="reveal text-sm font-bold uppercase tracking-[0.1em] text-pink">
           Proof I can build
         </p>
-        <h2 className="reveal mt-3 text-[clamp(1.8rem,1.2rem+2.4vw,2.8rem)] font-black leading-[1.1] tracking-[-1px] text-white">
-          Shipped, mostly solo.
+        <h2 className="reveal mt-3 font-display text-[clamp(1.8rem,1.2rem+2.4vw,2.8rem)] font-extrabold leading-[1.1] tracking-[-1px] text-white">
+          Shipped, <span className="gradient-text italic">mostly solo.</span>
         </h2>
 
         <div className="mt-10 grid gap-4 md:grid-cols-3">
